@@ -6,6 +6,10 @@ pipeline {
         // ARM_CLIENT_SECRET = credentials('AzureClientSecret')
         // ARM_SUBSCRIPTION_ID = credentials('AzureSubscriptionID')
     // }
+    tools {
+        terraform "terraform-1.4.4"
+        git "Default"
+    }
     stages {
         stage('Source') {
             steps {
