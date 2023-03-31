@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # az login --service-principal -u 1fca0f15-2edc-4b09-8cb9-a9eafcdcaf90 -p LSd8Q~Wij0wl_~926~oNv6KnmfAN.bzDNIUU~cAD --tenant 835b119d-4420-4305-a17e-9372a9a18ca3
-
+az login
 RESOURCE_GROUP_NAME=tfstate
 STORAGE_ACCOUNT_NAME=tfstatebit50
 CONTAINER_NAME=tfstate
