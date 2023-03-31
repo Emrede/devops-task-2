@@ -12,7 +12,7 @@ adesso DevOps Task 2
 
 
 ## Jenkins ##
-1. Any preffered Jenkins controller could be used 
+- Any preffered Jenkins controller could be used 
 
 - Following credentials should saved as secret texts into Jenkins Credentials Manager. This way, they could be kept as encrypted and used as environment values for Terraform to Access Azure services
 
@@ -24,3 +24,6 @@ environment {
     ARM_SUBSCRIPTION_ID = credentials('AzureSubscriptionID')
 }
 ```
+
+- The infrastructure could be setup from scratch with the Terraform-Plan and Terraform-Apply jobs
+- The all infrastructure can be destroyed with ```terraform destroy``` command

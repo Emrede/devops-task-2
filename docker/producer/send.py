@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import pika
 
-rabbitmq_host_ip = 'localhost'
+rabbitmq_host_ip = '10.102.64.235'
 rabbitmq_port = 5672
 credentials = pika.PlainCredentials('user', 'apaQVRr1Ty0SWGal')
 
