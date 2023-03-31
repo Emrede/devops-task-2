@@ -11,12 +11,15 @@ pipeline {
         git 'Default'
     }
     stages {
-        stage('Plan') {
+        stage('Source') {
             steps {
                 git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/Emrede/devops-task-2.git'
+            }
+        }
+
+        stage('Plan') {
+            steps {
                 sh '''
-                    # mkdir -p /home/adesso/.kube
-                    # cp kubeconfig /home/adesso/.kube/config
                     cd terraform
                     terraform init -input=false
                     terraform plan -input=false -out tfplan
@@ -24,26 +27,6 @@ pipeline {
                 '''
             }
         }
-
-        // stage('Set kubeconfig') {
-        //     steps {
-        //         kubeconfig(credentialsId: 'kubeconfig', serverUrl: 'https://kubernetes.docker.internal:6443') {
-        //             // some block
-        //         }
-        //     }
-        // }
-        // stage('Plan') {
-        //     steps {
-        //         sh '''
-        //             # mkdir -p /home/adesso/.kube
-        //             # cp kubeconfig /home/adesso/.kube/config
-        //             cd terraform
-        //             terraform init -input=false
-        //             terraform plan -input=false -out tfplan
-        //             terraform show -no-color tfplan > tfplan.txt
-        //         '''
-        //     }
-        // }
 
     // stage('Apply') {
     //     steps {
