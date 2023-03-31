@@ -17,13 +17,6 @@ pipeline {
             }
         }
 
-        // stage('Set kubeconfig') {
-        //     steps {
-        //         kubeconfig(credentialsId: 'kubeconfig', serverUrl: 'https://kubernetes.docker.internal:6443') {
-        //             // some block
-        //         }
-        //     }
-        // }
         stage('Plan') {
             steps {
                 sh '''
