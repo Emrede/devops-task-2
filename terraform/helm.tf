@@ -15,16 +15,16 @@ resource "helm_release" "rabbitmq" {
 }
 # --set rabbitmq.username=admin,rabbitmq.password=secretpassword,rabbitmq.erlangCookie=secretcookie \
 
-resource "helm_release" "jenkins" {
-  name       = "my-jenkins-release"
-  repository = "https://charts.jenkins.io" # For bitnami jenkins: "https://charts.bitnami.com/bitnami"
-  chart      = "jenkins"
-  version    = "4.3.10" # Bitnami Jenkins version: "11.0.17"
+# resource "helm_release" "jenkins" {
+#   name       = "my-jenkins-release"
+#   repository = "https://charts.jenkins.io" # For bitnami jenkins: "https://charts.bitnami.com/bitnami"
+#   chart      = "jenkins"
+#   version    = "4.3.10" # Bitnami Jenkins version: "11.0.17"
 
-  values = [
-    "${file("jenkins-values.yaml")}"
-  ]
-}
+#   values = [
+#     "${file("jenkins-values.yaml")}"
+#   ]
+# }
 
 # resource "helm_release" "python-consumer" {
 #   name            = "python-consumer"

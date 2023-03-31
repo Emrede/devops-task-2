@@ -1,14 +1,14 @@
 pipeline {
     agent any
     // environment {
-        // ARM_TENANT_ID = credentials('AzureTenantID')
-        // ARM_CLIENT_ID = credentials('AzureClientID')
-        // ARM_CLIENT_SECRET = credentials('AzureClientSecret')
-        // ARM_SUBSCRIPTION_ID = credentials('AzureSubscriptionID')
+    // ARM_TENANT_ID = credentials('AzureTenantID')
+    // ARM_CLIENT_ID = credentials('AzureClientID')
+    // ARM_CLIENT_SECRET = credentials('AzureClientSecret')
+    // ARM_SUBSCRIPTION_ID = credentials('AzureSubscriptionID')
     // }
     tools {
-        terraform "terraform-1.4.4"
-        git "Default"
+        terraform 'terraform-1.4.4'
+        git 'Default'
     }
     stages {
         stage('Source') {
@@ -27,7 +27,6 @@ pipeline {
         stage('Plan') {
             steps {
                 sh '''
-                    #!/bin/bash
                     # mkdir -p /home/adesso/.kube
                     # cp kubeconfig /home/adesso/.kube/config
                     cd terraform
