@@ -19,7 +19,7 @@ pipeline {
 
         stage('Plan') {
             steps {
-                sh '''
+                bash '''
                     cd terraform
                     terraform init -input=false
                     terraform plan -input=false -out tfplan
