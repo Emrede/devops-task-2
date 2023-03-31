@@ -19,7 +19,10 @@ pipeline {
         stage('Plan') {
             steps {
                 sh '''
-                az login
+                    cd terraform
+                    terraform init -input=false
+                    terraform plan -input=false -out tfplan
+                    terraform show -no-color tfplan > tfplan.txt
                 '''
             }
         }
