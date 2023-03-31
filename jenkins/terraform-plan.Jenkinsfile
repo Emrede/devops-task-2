@@ -1,11 +1,11 @@
 pipeline {
     agent any
-    // environment {
-    // ARM_TENANT_ID = credentials('AzureTenantID')
-    // ARM_CLIENT_ID = credentials('AzureClientID')
-    // ARM_CLIENT_SECRET = credentials('AzureClientSecret')
-    // ARM_SUBSCRIPTION_ID = credentials('AzureSubscriptionID')
-    // }
+    environment {
+        ARM_TENANT_ID = credentials('AzureTenantID')
+        ARM_CLIENT_ID = credentials('AzureClientID')
+        ARM_CLIENT_SECRET = credentials('AzureClientSecret')
+        ARM_SUBSCRIPTION_ID = credentials('AzureSubscriptionID')
+    }
     tools {
         terraform 'terraform-1'
         git 'Default'

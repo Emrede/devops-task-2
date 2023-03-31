@@ -9,17 +9,16 @@ pipeline {
     stages {
         stage('Source') {
             steps {
-                git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/Emrede/devops-task.git'
+                git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/Emrede/devops-task-2.git'
             }
         }
-
         stage('Apply') {
             steps {
-                sh """
+                sh '''
                     cd terraform
                     terraform init -input=false
                     terraform apply --auto-approve -input=false
-                """
+                '''
             }
         }
     }
