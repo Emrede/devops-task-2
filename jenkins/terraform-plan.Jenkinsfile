@@ -7,7 +7,7 @@ pipeline {
     // ARM_SUBSCRIPTION_ID = credentials('AzureSubscriptionID')
     // }
     tools {
-        terraform 'terraform-1.4.4'
+        // terraform 'terraform-1.4.4'
         git 'Default'
     }
     stages {
