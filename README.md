@@ -1,6 +1,8 @@
 # devops-task-2
 adesso DevOps Task 2
 
+![alt text](adesso-devops-task-diagram.png)
+
 1. Install Docker Desktop first, then enable Kubernetes from Settings
 2. You need an Azure or similar Cloud service account to create a remote storage.
 3. Log on Azure with ```az login``` command if necessary
