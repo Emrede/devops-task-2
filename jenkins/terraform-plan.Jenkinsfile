@@ -27,6 +27,7 @@ pipeline {
         stage('Plan') {
             steps {
                 sh '''
+                    #!/bin/bash
                     # mkdir -p /home/adesso/.kube
                     # cp kubeconfig /home/adesso/.kube/config
                     cd terraform
