@@ -16,10 +16,9 @@ pipeline {
                 git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/Emrede/devops-task-2.git'
             }
         }
-
         stage('Plan') {
             steps {
-                bash '''
+                sh '''
                     cd terraform
                     terraform init -input=false
                     terraform plan -input=false -out tfplan
@@ -27,17 +26,17 @@ pipeline {
                 '''
             }
         }
+    }
+}
 
     // stage('Apply') {
     //     steps {
     //         sh "terraform apply --auto-approve -input=false tfplan"
     //     }
     // }
-    }
 
 // post {
 //     always {
 //         archiveArtifacts artifacts: 'terraform/tfplan.txt'
 //     }
 // }
-}
