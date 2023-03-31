@@ -1,4 +1,8 @@
+.DS_Store
 docker/consumer/.venv
 docker/producer/.venv
 terraform/.terraform
 terraform/.terraform.lock.hcl
+scripts/producer.py
+scripts/open-ports.sh
+
