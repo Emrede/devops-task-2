@@ -13,16 +13,23 @@ pipeline {
             }
         }
 
+        stage('Set kubeconfig') {
+            steps {
+                kubeconfig(credentialsId: 'kubeconfig', serverUrl: 'https://kubernetes.docker.internal:6443') {
+                    // some block
+                }
+            }
+        }
         stage('Plan') {
             steps {
-                sh """
+                sh '''
                     # mkdir -p /home/adesso/.kube
                     # cp kubeconfig /home/adesso/.kube/config
                     cd terraform
                     terraform init -input=false
                     terraform plan -input=false -out tfplan
                     terraform show -no-color tfplan > tfplan.txt
-                """
+                '''
             }
         }
 
@@ -33,9 +40,9 @@ pipeline {
     // }
     }
 
-    // post {
-    //     always {
-    //         archiveArtifacts artifacts: 'terraform/tfplan.txt'
-    //     }
-    // }
+// post {
+//     always {
+//         archiveArtifacts artifacts: 'terraform/tfplan.txt'
+//     }
+// }
 }
