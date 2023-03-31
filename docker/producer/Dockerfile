@@ -10,5 +10,5 @@ COPY . .
 
 # RUN python3 -u send.py
 # RUN ./run.sh
-RUN [ "python3", "-u", "send.py", "--host=0.0.0.0"]
+CMD [ "python3", "-u", "send.py", "--host=0.0.0.0"]
 # CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"

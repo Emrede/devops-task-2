@@ -9,3 +9,18 @@ adesso DevOps Task 2
 3. Edit and run ```create-remote-storage.sh``` to create a storage for Terraform backend. Edit STORAGE_ACCOUNT_NAME and run. It will prompt for ```az login``` command, follow the opened browser window and login
 4. You can also run ```az login``` command manually
 5. After creating storage, terraform backend config variables should be configured in ```main.tf```. Update ```backend "azurerm"``` block with your backend storage values
+
+
+## Jenkins ##
+1. Any preffered Jenkins controller could be used 
+
+- Following credentials should saved as secret texts into Jenkins Credentials Manager. This way, they could be kept as encrypted and used as environment values for Terraform to Access Azure services
+
+```
+environment {
+    ARM_TENANT_ID = credentials('AzureTenantID')
+    ARM_CLIENT_ID = credentials('AzureClientID')
+    ARM_CLIENT_SECRET = credentials('AzureClientSecret')
+    ARM_SUBSCRIPTION_ID = credentials('AzureSubscriptionID')
+}
+```
