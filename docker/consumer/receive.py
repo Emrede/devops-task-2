@@ -4,9 +4,12 @@ import sys
 import os
 
 def main():
+    rabbitmq_host_ip = 'localhost' 
+    rabbitmq_port = 5672
     credentials = pika.PlainCredentials('user', 'apaQVRr1Ty0SWGal')
-    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost',
-                                                                   5672,
+    
+    connection = pika.BlockingConnection(pika.ConnectionParameters(rabbitmq_host_ip,
+                                                                   rabbitmq_port,
                                                                    '/',
                                                                    credentials))
     channel = connection.channel()
@@ -32,3 +35,4 @@ if __name__ == '__main__':
             sys.exit(0)
         except SystemExit:
             os._exit(0)
+

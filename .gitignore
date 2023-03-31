@@ -1,0 +1,4 @@
+docker/consumer/.venv
+docker/producer/.venv
+terraform/.terraform
+terraform/.terraform.lock.hcl
