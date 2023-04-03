@@ -25,6 +25,10 @@ environment {
 }
 ```
 
+- The infrastructure could be setup from scratch with the *Terraform-Plan* and *Terraform-Apply* jobs or ```terraform apply --auto-approve command```
+- The all infrastructure can be destroyed with ```terraform destroy``` command
+
+
 ## Producer and Consumer Apps ##
 - The python apps were containerised with Docker and then their Helm charts were created for Kubernetes
 - Producer app sends a message to RabbitMQ in every 5 seconds
@@ -36,5 +40,3 @@ environment {
 kubectl get pods -w -o wide
 kubectl get svc -w
 ```
-- The infrastructure could be setup from scratch with the Terraform-Plan and Terraform-Apply jobs 
-- The all infrastructure can be destroyed with ```terraform destroy``` command
