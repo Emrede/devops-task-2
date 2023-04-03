@@ -1037,7 +1037,7 @@ service:
   externalTrafficPolicy: Cluster
   ## @param service.loadBalancerIP Set the LoadBalancerIP
   ##
-  loadBalancerIP: ""
+  loadBalancerIP: "10.111.118.174"
   ## @param service.clusterIP Kubernetes service Cluster IP
   ## e.g.:
   ## clusterIP: None
