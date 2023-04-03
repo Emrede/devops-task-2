@@ -1042,7 +1042,7 @@ service:
   ## e.g.:
   ## clusterIP: None
   ##
-  clusterIP: ""
+  clusterIP: "10.111.118.174"
   ## @param service.labels Service labels. Evaluated as a template
   ##
   labels: {}
