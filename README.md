@@ -26,8 +26,8 @@ environment {
 ```
 
 ## Producer and Consumer Apps ##
-- The python apps were containerised with Docker and then their Helm charts were created. 
-- Producer app sends a message in every 5 seconds
+- The python apps were containerised with Docker and then their Helm charts were created for Kubernetes
+- Producer app sends a message to RabbitMQ in every 5 seconds
 - Consumer app connects to RabbitMQ instance and waits for the incoming messages on specified queue 
 
 ## Notes ##
