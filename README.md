@@ -14,7 +14,7 @@ adesso DevOps Task 2
 ## Jenkins ##
 - Any preffered Jenkins controller could be used 
 
-- Your repository token (e.g. Github) and following credentials should have been stored as secret texts into Jenkins Credentials Manager. This way, they could be kept as encrypted and used as environment values for Terraform to Access Azure services
+- Your *Repository Access Token (e.g. Github)* and following credentials should have been stored as secret texts into Jenkins Credentials Manager. This way, they could be kept as encrypted and used as environment values for Terraform to Access Azure services
 
 ```
 environment {
@@ -25,7 +25,7 @@ environment {
 }
 ```
 
-- The infrastructure could be setup from scratch with the *Terraform-Plan* and *Terraform-Apply* jobs or ```terraform apply --auto-approve command```
+- The infrastructure could be setup from scratch with the *Terraform-Plan* and *Terraform-Apply* jobs or ```terraform apply --auto-approve``` command
 - The all infrastructure can be destroyed with ```terraform destroy``` command
 
 
