@@ -30,8 +30,13 @@ environment {
 
 
 ## Producer and Consumer Apps ##
-- Get the application URL by running these commands:
-     NOTE: It may take a few minutes for the LoadBalancer IP to be available.
-           You can watch the status of by running 'kubectl get --namespace default svc -w flask-producer'
-  export SERVICE_IP=$(kubectl get svc --namespace default flask-producer --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")
-  echo http://$SERVICE_IP:8000
+- The python apps were containerised with Docker and then their Helm charts were created. 
+- Producer app sends a message in every 5 seconds
+- Consumer app connects to RabbitMQ instance and waits for the incoming messages on specified queue 
+
+## Notes ##
+- Different commands can be used to check for the POD and Service details (such as Ports, IPs, etc)
+```
+kubectl get pods -w -o wide
+kubectl get svc -w
+```
