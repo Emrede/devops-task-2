@@ -34,13 +34,13 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          # command: ["python3", "-u", "send.py"]
+          command: ["python3", "-u", "send.py"]
           # command: [ "sleep" ]
           # args: [ "infinity" ]
-          # ports:
-          #   - name: http
-          #     containerPort: {{ .Values.service.port }}
-          #     protocol: TCP
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
           # livenessProbe:
           #   httpGet:
           #     path: /

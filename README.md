@@ -27,3 +27,11 @@ environment {
 
 - The infrastructure could be setup from scratch with the Terraform-Plan and Terraform-Apply jobs
 - The all infrastructure can be destroyed with ```terraform destroy``` command
+
+
+## Producer and Consumer Apps ##
+- Get the application URL by running these commands:
+     NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+           You can watch the status of by running 'kubectl get --namespace default svc -w flask-producer'
+  export SERVICE_IP=$(kubectl get svc --namespace default flask-producer --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")
+  echo http://$SERVICE_IP:8000

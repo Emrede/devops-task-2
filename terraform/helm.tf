@@ -26,10 +26,10 @@ resource "helm_release" "rabbitmq" {
 #   ]
 # }
 
-# resource "helm_release" "python-consumer" {
-#   name            = "python-consumer"
-#   chart           = "../helm-charts/python-consumer"
-# }
+resource "helm_release" "python-consumer" {
+  name            = "python-consumer"
+  chart           = "../helm-charts/python-consumer"
+}
 resource "helm_release" "python-producer" {
   name            = "python-producer"
   chart           = "../helm-charts/python-producer"
@@ -38,14 +38,14 @@ resource "helm_release" "python-producer" {
   cleanup_on_fail = true
   force_update    = true
 }
-resource "helm_release" "python-producer-2" {
-  name            = "python-producer-2"
-  chart           = "../helm-charts/python-producer"
-  replace         = true
-  recreate_pods   = true
-  cleanup_on_fail = true
-  force_update    = true
-}
+# resource "helm_release" "python-producer-2" {
+#   name            = "python-producer-2"
+#   chart           = "../helm-charts/python-producer"
+#   replace         = true
+#   recreate_pods   = true
+#   cleanup_on_fail = true
+#   force_update    = true
+# }
 
 # resource "helm_release" "python-producer-3" {
 #   name       = "python-producer-3"

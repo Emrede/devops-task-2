@@ -4,7 +4,7 @@ import sys
 import os
 
 def main():
-    rabbitmq_host_ip = 'localhost' 
+    rabbitmq_host_ip = '10.111.118.174' 
     rabbitmq_port = 5672
     credentials = pika.PlainCredentials('user', 'apaQVRr1Ty0SWGal')
     
